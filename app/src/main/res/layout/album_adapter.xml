@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="albumId"
+            type="String" />
+
+        <variable
+            name="photoId"
+            type="String" />
+
+        <variable
+            name="albumUrl"
+            type="String" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="url"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:background="@color/colorListBackground">
+
+        <ImageView
+            android:id="@+id/iv_album"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            android:src="@{albumUrl}"
+            android:contentDescription="@string/Album" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="200dp"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:hint="@string/image_text"
+            android:text="@{title}"
+            android:textColor="@color/colorTextWhite" />
+    </LinearLayout>
+</layout>
