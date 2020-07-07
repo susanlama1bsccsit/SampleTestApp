@@ -30,7 +30,7 @@ class UserInfoAdapter(context: Context) : RecyclerView.Adapter<UserInfoAdapter.U
 
         return UserInfoViewHolder(userListBinding).also {
             userListBinding.root.setOnClickListener(View.OnClickListener {
-                clickHandler.forwardClick(mUserModelItem?.get(i)!!.id, it)
+                clickHandler.forwardClick(userListBinding.id!!, it)
             })
         }
     }

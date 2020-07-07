@@ -70,7 +70,7 @@ class AlbumUrlAdapter(context: Context) : RecyclerView.Adapter<AlbumUrlAdapter.A
 
         context?.let {
             Picasso.get()
-                .load("https://via.placeholder.com/600/92c952.png")
+                .load(imageUrl)
                 .into(view)
         }
     }

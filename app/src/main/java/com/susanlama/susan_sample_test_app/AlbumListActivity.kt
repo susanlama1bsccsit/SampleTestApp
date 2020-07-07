@@ -37,7 +37,7 @@ class AlbumListActivity : AppCompatActivity(), AlbumUrlAdapter.ClickEventHandler
 
         //get values from intent
         albumId = intent.getStringExtra(EXTRA_ID)
-        albumBinding!!.albumId = "Album ID: $albumId"
+        albumBinding!!.albumId = "Album $albumId"
 
         // bind RecyclerView
         val recyclerView = albumBinding?.viewAlbum
@@ -63,7 +63,8 @@ class AlbumListActivity : AppCompatActivity(), AlbumUrlAdapter.ClickEventHandler
             Observer<List<Any>> { userModel ->
                 ///if any thing changes update to UI
 
-                albumAdapter?.setAlbumList(albumId!!.toInt(),
+                val actualAlbumId = albumId!!.replace("ID: ","")
+                albumAdapter?.setAlbumList(actualAlbumId!!.toInt(),
                     userModel as ArrayList<AlbumUrlModelItem>)
                 loadBar?.visibility = View.GONE
             })
